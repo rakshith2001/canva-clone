@@ -1,5 +1,5 @@
 import mongoose, { Mongoose } from 'mongoose';
-
+// serverless archetecture is created.
 const MONGODB_URL = process.env.MONGODB_URL;
 
 interface MongooseConnection {
@@ -23,7 +23,7 @@ export const connectToDatabase = async () => {
   cached.promise = 
     cached.promise || 
     mongoose.connect(MONGODB_URL, { 
-      dbName: 'canva clone', bufferCommands: false 
+      dbName: 'canva', bufferCommands: false 
     })
 
   cached.conn = await cached.promise;
